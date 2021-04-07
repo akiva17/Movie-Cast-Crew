@@ -25,7 +25,7 @@ def search(name: str, category: List[str] = None):
 
         if Person in [type(item) for item in data]:
             # If a person is in the data, print the category name
-            print('{:-^15}'.format(key))
+            print('{:-^40}'.format(key))
         for value in data:
             # Look in the movie data for person objects, then print their attributes
             if type(value) is Person:
