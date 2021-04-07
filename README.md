@@ -28,3 +28,14 @@ Melissa Mathison, writer
 ---director----
 Steven Spielberg, director
 ```
+
+```
+> python main.py search the green mile -c thanks
+
+Searching on IMDb...
+The Green Mile - 1999
+----thanks-----
+Stephen King, thanks
+Robyn Smith, thanks
+Don Sundquist, thanks
+```
