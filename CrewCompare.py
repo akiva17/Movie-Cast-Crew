@@ -1,5 +1,80 @@
-import imdb 
+from __future__ import annotations
+from typing import Optional, List, Set
+# Don't worry about these imports, they just make notation clearer with less comments
+
+import imdb
 from imdb.Person import Person
+
+
+# Goal for syntax
+# >>> movie1 = MyMovie("Braveheart")
+# >>> movie2 = MyMovie("Passion of the Christ")
+# >>> print(movie1.compare(movie2))
+# ["Mel Gibson", etc...]
+
+class MyMovie(object):
+    """Information and functions for a movie."""
+
+    def __init__(self, name: str):
+        """
+        This method is called whenver an instance of this object is created. It is used to define an objects
+        attributes on creation. For example:
+
+        >>> movie = MyMovie('The Big Lebowski')
+        >>> movie.name
+        "The Big Lebowski"
+        """
+        self.name = name
+
+        # Using an underscore before a variable name means the attribute is private. _imdb_data should only be used
+        # inside the MyMovie class. This way, you don't have to know the imdb package to find useful information on a
+        # movie. It's all within this class.
+
+        # self._imdb_data = ia....
+        # self.title = ....
+        pass  # pass is the same as "do nothing"
+
+    def __str__(self) -> str:
+        """
+        This method determines the string representation of this object. For example:
+
+        >>> movie = MyMovie('Heat')
+        >>> print(movie)
+        "Heat - 1995"
+
+        :return: MyMovie as a printable string
+        """
+        # return (however you want this object represented as a string)
+        pass
+
+    def get_cast(self, categories: Optional[List[str]] = None) -> List[str]:
+        """
+        Returns a list of all the people involved with the movie.
+
+        Example:
+        >>> for cast in movie.get_cast()
+        >>>     print(cast)
+        Actor1
+        Actor2
+        etc...
+
+        :param categories: an optional list of categories to filter cast
+        :return: a list of crew member names
+        """
+        pass
+
+    def compare(self, other_movie: MyMovie) -> Set[str]:
+        """
+        Returns a set of crew members common to both movies. Once you write this method, Python has a very easy way
+        to expand it to multiple movies.
+
+        NOTE: IT DOES NOT PRINT THE COMPARISON. A movie object does not care how you want to look at it, all it cares
+        about is giving you the correct data.
+
+        :param other_movie: MyMovie object for comparison
+        :return: set of crew member names
+        """
+        pass
 
 ia = imdb.IMDb()
 #Prompts user to type in movie.
